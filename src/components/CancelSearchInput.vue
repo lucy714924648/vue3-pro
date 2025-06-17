@@ -4,27 +4,27 @@
 import { ref, onMounted } from "vue";
 
 // 模拟搜索数据源
-// const searchData = [
-//   { value: "vue3", label: "Vue3 教程" },
-//   { value: "element-plus", label: "ElementPlus 文档" },
-//   { value: "javascript", label: "JavaScript 高级编程" },
-//   { value: "typescript", label: "TypeScript 入门" },
-//   { value: "vue-router", label: "Vue Router 4.x" },
-//   { value: "pinia", label: "Pinia 状态管理" },
-//   { value: "vite", label: "Vite 构建工具" },
-//   { value: "composition-api", label: "组合式API" },
-// ];
+const searchData = [
+  { value: "vue3", label: "Vue3 教程" },
+  { value: "element-plus", label: "ElementPlus 文档" },
+  { value: "javascript", label: "JavaScript 高级编程" },
+  { value: "typescript", label: "TypeScript 入门" },
+  { value: "vue-router", label: "Vue Router 4.x" },
+  { value: "pinia", label: "Pinia 状态管理" },
+  { value: "vite", label: "Vite 构建工具" },
+  { value: "composition-api", label: "组合式API" },
+];
 
-const searchData = ref([]);
-const fetchReuest = () => {
-  for (let i = 0; i < 20; i++) {
-    searchData.push({
-      value: `vue${i}`,
-      label: `Vue${i} 教程`,
-    });
-  }
-};
-onMounted(() => fetchReuest());
+// const searchData = ref([]);
+// const fetchReuest = () => {
+//   for (let i = 0; i < 20; i++) {
+//     searchData.push({
+//       value: `vue${i}`,
+//       label: `Vue${i} 教程`,
+//     });
+//   }
+// };
+// onMounted(() => fetchReuest());
 // 搜索值
 const searchValue = ref("");
 

@@ -19,7 +19,19 @@ const router = createRouter({
         path: '/category',
         name: 'category',
         component: () => import('../views/Category/index.vue'),
-      }]
+      },
+      {
+        path: '/my-ui-input',
+        name: 'my-ui-input',
+        component: () => import("../views/MyUIInput/index.vue"),
+      },
+      {
+        path: '/AddProductForm',
+        name: 'AddProductForm',
+        component: () => import("../views/AddProductForm/index.vue"),
+
+      },
+      ]
     },
     {
       path: '/login',
