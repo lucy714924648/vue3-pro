@@ -137,16 +137,14 @@ Promise.myAll=function(proms){
  let i=0;
  const result=[];
  for (const pro of proms) {
-    const index=i;
+    let index=i;
     i++;
-    Promise.resolve(p).then((data)=>{
+    Promise.resolve(pro).then((data)=>{
         //1.讲完成的数据加到最终的结果
         result[index]=data;
         //2.是否已完成
         i--;
-          console.log(i);
         if (i===0) {
-           console.log(i);
             res(result);
         }
     },rej)
@@ -167,11 +165,15 @@ Promise.myRace=function (proms) {
     })
 }
 
-// const p1=new Promise((resolve,reject)=>{
-//     setTimeout(()=>{
-//         reject(333)
-//     },2000)
-// })
+const p1=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject(333)
+    },2000)
+})
+p1.catch(err=>{
+    console.log(err);
+    
+})
 const p2=new Promise((resolve,reject)=>{
     resolve(111)
 })
@@ -182,7 +184,7 @@ const p2=new Promise((resolve,reject)=>{
 // console.log(error);
 
 // }))
-Promise.myAll([1,Promise.resolve(2)]).then((datas)=>{
+Promise.myAll([1,Promise.resolve(2),p1]).then((datas)=>{
 console.log(datas);
 
 },(error)=>{
