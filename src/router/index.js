@@ -39,6 +39,17 @@ const router = createRouter({
       component: () => import("../views/Login/index.vue"),
     },
   ],
-})
+});
 
+router.beforeEach((to, from, next) => {
+  if (true) {
+    if (to.path === '/login') {
+      next('/');//  去首页
+    } else {
+      next()
+    }
+  } else {
+    next('/login')
+  }
+})
 export default router

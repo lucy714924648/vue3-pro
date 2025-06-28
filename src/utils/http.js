@@ -2,8 +2,10 @@ import axios from "axios";
 import { setToken, getToken, setRefreshToken } from '@/utils/auth'
 import { refreshtoken, isRefreshToken } from './refreshToken'
 const ins = axios.create({
-    baseURL: 'https://some-domain.com/api/',
+    // baseURL: 'https://some-domain.com/api/',
     timeout: 1000,
+    // process.env.NODE_ENV
+    baseURL:process.env.VUE_APP_BASE_API,
     headers: {
         Authorization: `Bearer ${getToken()}`
     }
